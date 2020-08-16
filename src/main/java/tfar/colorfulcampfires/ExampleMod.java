@@ -1,7 +1,6 @@
-package com.example.examplemod;
+package tfar.colorfulcampfires;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,11 +14,10 @@ import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExampleMod.MODID)
-public class ExampleMod
-{
+public class ExampleMod {
     // Directly reference a log4j logger.
 
-    public static final String MODID = "examplemod";
+    public static final String MODID = "colorfulcampfires";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -35,6 +33,13 @@ public class ExampleMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
+    }
+
+    public static float[] intToFloatArray(int color) {
+            int l = (color & 16711680) >> 16;
+            int m = (color & '\uff00') >> 8;
+            int n = (color & 255);
+            return new float[]{(float) l / 255.0F, (float) m / 255.0F, (float) n / 255.0F};
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "tfar.colorfulcampfires.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "colorfulcampfires.refmap.json",
+  "mixins": [
+    "CampfireParticleMixin"
+  ],
+  "client": [
+    "CampfireBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
